@@ -1,0 +1,8 @@
+
+<view class="header">
+<c-epsoide class="epsoide" index="{{classic.index}}"/>
+<c-like  class="like"  bind:TabLike="onlike"  count="{{classic.fav_nums}}" like="{{classic.like_status}}"/>
+</view>
+
+<c-movie image="{{classic.image}}" content="{{classic.content}}" category="{{classic.type}}"/>
+<c-control page="{{classic.index}}" total="{{total}}" title="{{classic.title}}"  bind:Previos="onPrevios" bind:Next="onNext"/>

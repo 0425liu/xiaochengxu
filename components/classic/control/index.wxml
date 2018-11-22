@@ -1,0 +1,22 @@
+<!--components/classic/control/index.wxml-->
+<wxs module="filter">
+var latest= function(total,page){
+        if(total ===page){
+            return true
+        }else{
+            return false
+        }
+}
+var first= function(page){
+        return page ===1 ? true :false;
+}
+module.exports={
+    latest:latest,
+    first:first
+}
+</wxs>
+<view class="control">
+    <image  src="{{filter.first(page) ? disleft:left}}" bind:tap="handlePrevios" />
+    <text >{{title}}</text>
+     <image  src="{{filter.latest(total,page) ? disright:right}}" bind:tap="handleNext"/>
+</view>

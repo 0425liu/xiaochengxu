@@ -1,0 +1,38 @@
+/* components/movie/index.wxss */
+.movie-image{
+  width:100%;
+}
+.movie-tag{
+  width:46rpx;
+  height:142rpx;
+  position: relative;
+  left: 30rpx;
+  bottom:58rpx;
+}
+.content{
+   font-size:34rpx;
+   max-width:500rpx;
+   margin: 0 auto ;
+   display: block;
+   line-height: 50rpx;
+}
+.music-wrap{
+  display: flex;
+  justify-content: center;
+    margin-top: 43rpx;
+    position: relative;
+}
+.music-image{
+  width: 442rpx;
+  height:442rpx;
+  border-radius: 50%;
+
+}
+.status{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  width:120rpx;
+  height:120rpx;
+}

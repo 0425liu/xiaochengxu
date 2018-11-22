@@ -1,0 +1,18 @@
+.like{
+  display:inline-flex;
+  padding:10rpx;
+}
+
+.like image{
+    width: 32rpx;
+    height: 28rpx;
+}
+.like text{
+  font-size:24rpx;
+  position: relative;
+  line-height: 24rpx;
+  color: #bbb;
+  bottom:10rpx;
+  left:6rpx;
+
+}
