@@ -58,11 +58,17 @@ Component({
     },
     onConfirm: function (event) {
       const q = event.detail.value || event.detail.text;
+      console.log(q)
       this.setData({
         search: true,
-        loadingCenter: true
+        loadingCenter: true,
+        total: null,
+        listData: []
       })
       searchModels.setHistory(q)
+      this.setData({
+        history: searchModels.getHistory()
+      })
       searchModels.getSearch(0, q).then(res => {
         this.setData({
           listData: res.data.books,
