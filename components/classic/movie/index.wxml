@@ -9,16 +9,15 @@
       default:
         return "images/movie@tag.png";
     }
-
   }
   module.exports.category = category;
 </wxs>
 
 <view>
   <image src="{{image}}" class="movie-image" wx:if="{{category !== 200}}"/>
-  <view wx:if="{{category == 200}}" class="music-wrap">
-    <image src="{{image}}" class="music-image" />
-    <image class="status" src="images/player@waitting.png"/>
+  <view wx:if="{{category == 200}}" class="music-wrap" bind:tap="handlePlay">
+    <image src="{{image}}" class="music-image {{playing ? 'rotate':'' }}" />
+    <image class="status" src="{{playing ?playUrl:pasueUrl }}"/>
   </view>
   <image src="{{change.category(category)}}" class="movie-tag"/>
   <text class="content">{{content}}</text>

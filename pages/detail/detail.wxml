@@ -1,0 +1,87 @@
+<!--pages/detail/detail.wxml-->
+<view class="container">
+    <view class="book">
+        <image src="{{detail.image}}"/>
+        <text class="titel">{{detail.title}}</text>
+        <text class="name">{{detail.author}}</text>
+    </view>
+    <view class="instructions">
+        <view class="title">短评</view>
+        <view class="comments">
+            <block wx:for="{{comment}}" wx:key="index">
+                <c-tag text="{{item.content}}" tag-class="{{util.commentClass(index)}}">
+                    <text>{{'+' + item.nums}}</text>
+                </c-tag>
+            </block>
+        </view>
+    </view>
+    <view class="instructions">
+        <view class="title">内容简介</view>
+        <text class="content">{{detail.summary}}</text>
+    </view>
+    <view class="instructions">
+         <view class="title">书本信息</view>
+         <view class="detail-contaner">
+      <view class="vertical">
+        <text class="description">出版社</text>
+        <text class="description">出版年</text>
+        <text class="description">页数</text>
+        <text class="description">定价</text>
+        <text class="description">装帧</text>
+      </view>
+      <view class="vertical">
+        <text class="">{{detail.publisher}}</text>
+        <text class="">{{detail.pubdate}}</text>
+        <text class="">{{detail.pages}}</text>
+        <text class="">{{detail.price}}</text>
+        <text class="">{{detail.binding}}</text>
+      </view>
+
+    </view>
+    </view>
+</view>
+<view class="post-container" wx:if="{{!posting}}">
+    <view class="post-fake" bind:tap="onFakePost">
+    <text>输入短评</text>
+  </view>
+   <view class="like-container">
+       <c-like  class="like" bind:TabLike="onlike"  
+    count="{{count}}" like="{{like}}"/>
+    </view>
+</view>
+<c-mask wx:if="{{posting}}"/>
+<view class="posting-container"  wx:if="{{posting}}">
+     <view class="post-header">
+        <text wx:if="{{!(comment == false)}}">仅可点击标签+1</text>
+        <text wx:else>暂无短评</text>
+        <text class="cancel" >取消</text>
+    </view>
+    <view class="comment-container">
+    <block wx:for="{{util.limit(comment,3)}}" wx:key="index">
+        <c-tag  bind:tapping="onPost" text="{{item.content}}" tag-class="{{util.commentClass(index)}}">
+            <text>{{'+' + item.nums}}</text>
+        </c-tag>
+    </block>
+  </view>
+     <input  focus="{{posting}}"  bindconfirm ="onPost"   confirm-type="发送" class="post" placeholder='短评最多12个字' ></input>
+</view>
+
+
+<wxs module="util">
+var commentClass=function(index){
+    if(index==0){
+        return 'tag-bg1'
+    }
+    if(index ===1){
+         return 'tag-bg2'
+    }
+    return ''
+}
+var limit=function(array,length){
+    return array.slice(0,length)
+}
+module.exports={
+    commentClass:commentClass
+    limit:limit
+}
+</wxs>

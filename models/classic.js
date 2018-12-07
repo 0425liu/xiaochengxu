@@ -6,9 +6,10 @@ class ClassisModel extends HTTP {
       url: "/classic/latest",
       method: "GET",
       success: (res) => {
-        let key = this._getKey(res.data.index)
-        wx.setStorageSync(key, res)
-        callback(res)
+        let data = res.data;
+        let key = this._getKey(data.index)
+        wx.setStorageSync(key, data)
+        callback(data)
       }
     })
   }
@@ -21,9 +22,10 @@ class ClassisModel extends HTTP {
         url: `/classic/${index}/${direction}`,
         method: "GET",
         success: (res) => {
-          let key = this._getKey(res.data.index)
-          wx.setStorageSync(key, res)
-          callback(res)
+          let data = res.data;
+          let key = this._getKey(data.index)
+          wx.setStorageSync(key, data)
+          callback(data, storage)
         }
       })
     } else {

@@ -1,0 +1,11 @@
+<!--components/book/list/index.wxml-->
+<view class="item" bind:tap="handleTap">
+    <image src="{{data.image}}"/>
+    <view class="info">
+        <text class="title">{{data.title}}</text>
+        <text class="author">{{data.author}}</text>
+        <block wx:if="{{data.like_status}}">
+            <text class="fav">{{data.fav_nums}}喜欢</text>
+        </block>
+    </view>
+</view>

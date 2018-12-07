@@ -1,38 +1,49 @@
 /* components/movie/index.wxss */
-.movie-image{
-  width:100%;
+
+.movie-image {
+  width: 100%;
 }
-.movie-tag{
-  width:46rpx;
-  height:142rpx;
+.movie-tag {
+  width: 46rpx;
+  height: 142rpx;
   position: relative;
   left: 30rpx;
-  bottom:58rpx;
+  bottom: 58rpx;
 }
-.content{
-   font-size:34rpx;
-   max-width:500rpx;
-   margin: 0 auto ;
-   display: block;
-   line-height: 50rpx;
+.content {
+  font-size: 34rpx;
+  max-width: 500rpx;
+  margin: 0 auto;
+  display: block;
+  line-height: 50rpx;
 }
-.music-wrap{
+.music-wrap {
   display: flex;
   justify-content: center;
-    margin-top: 43rpx;
-    position: relative;
+  margin-top: 43rpx;
+  position: relative;
 }
-.music-image{
+.music-image {
   width: 442rpx;
-  height:442rpx;
+  height: 442rpx;
   border-radius: 50%;
-
 }
-.status{
+.status {
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%,-50%);
-  width:120rpx;
-  height:120rpx;
+  transform: translate(-50%, -50%);
+  width: 120rpx;
+  height: 120rpx;
+}
+@keyframes rotateing {
+  0% {
+    transform: rotate(0)
+  }
+  100% {
+    transform: rotate(360deg)
+  }
+}
+.rotate {
+  animation: rotateing 10s linear infinite
 }

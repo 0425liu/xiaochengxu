@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "c-list": "/components/book/list/index",
+    "c-search": "/components/search/index"
+  }
+}

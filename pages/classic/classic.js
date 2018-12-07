@@ -8,7 +8,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    classic: null
+    classic: null,
+
   },
 
   /**
@@ -17,8 +18,10 @@ Page({
   onLoad: function (options) {
     classisModel.getClassicData((res) => {
       this.setData({
-        classic: res.data,
-        total: res.data.index
+        classic: res,
+        total: res.index,
+        likestatus: res.like_status,
+        likecount: res.fav_nums
       })
 
     })
@@ -39,15 +42,30 @@ Page({
   },
   _getPage: function (direction) {
     const index = this.data.classic.index
-    classisModel.getPageData(index, direction, (res) => {
-      console.log(res)
+    classisModel.getPageData(index, direction, (res, storage) => {
       this.setData({
-        classic: res.data
+        classic: res
       })
-
+      if (storage) {
+        this.setData({
+          likestatus: res.like_status,
+          likecount: res.fav_nums
+        })
+      } else {
+        likeModel.getLikeStatus(res.type, res.id, (res) => {
+          this.setData({
+            likestatus: res.like_status,
+            likecount: res.fav_nums
+          })
+        })
+      }
     })
+    this.monitorControl()
   },
-
+  monitorControl: function () {
+    this.selectComponent("#music")._recoverPlaying()
+    this.selectComponent("#music")._audioStatus()
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成

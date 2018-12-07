@@ -1,8 +1,10 @@
 
 <view class="header">
 <c-epsoide class="epsoide" index="{{classic.index}}"/>
-<c-like  class="like"  bind:TabLike="onlike"  count="{{classic.fav_nums}}" like="{{classic.like_status}}"/>
+<c-like  class="like"  bind:TabLike="onlike"  
+    count="{{likecount}}" like="{{likestatus}}"/>
 </view>
 
-<c-movie image="{{classic.image}}" content="{{classic.content}}" category="{{classic.type}}"/>
-<c-control page="{{classic.index}}" total="{{total}}" title="{{classic.title}}"  bind:Previos="onPrevios" bind:Next="onNext"/>
+<c-movie title="{{classic.title}}" id="music" src="{{classic.url}}" image="{{classic.image}}" content="{{classic.content}}" category="{{classic.type}}"/>
+<c-control bind:switch="monitorControl" page="{{classic.index}}" total="{{total}}"
+ title="{{classic.title}}"  bind:Previos="onPrevios" bind:Next="onNext"/>

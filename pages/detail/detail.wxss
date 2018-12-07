@@ -1,0 +1,142 @@
+/* pages/detail/detail.wxss */
+
+.container {
+  background-color: #f9f9f9;
+}
+.book {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 41rpx 0;
+}
+.book image {
+  width: 204rpx;
+  height: 305rpx;
+  box-shadow: 0px 6px 20px 0px rgba(171, 171, 171, 0.2);
+}
+.book .title {
+  font-size: 38rpx;
+  color: #000;
+  padding: 29rpx 0 17rpx;
+}
+.book .name {
+  font-size: 28rpx;
+  color: #999;
+}
+.instructions {
+  margin-top: 20rpx;
+  padding: 30rpx 25rpx;
+  background-color: #fff;
+}
+.instructions .title {
+  font-size: 30rpx;
+  text-align: center;
+  padding-bottom: 30rpx;
+}
+.comments {
+  overflow: hidden;
+}
+.tag-bg1 {
+  background-color: #fffbdd !important;
+}
+.tag-bg2 {
+  background-color: #eefaff !important;
+}
+.content {
+  padding: 60rpx;
+  color: #666666;
+  font-size: 28rpx;
+  line-height: 46rpx;
+}
+.post-container {
+  height: 100rpx;
+  box-shadow: 1px -1px 1px #e3e3e3;
+  position: fixed;
+  width: 100%;
+  background-color: #fff;
+  bottom: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 30rpx;
+  box-sizing: border-box;
+  justify-content: space-between;
+  /* z-index: 99; */
+}
+.post-fake {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 60rpx;
+  width: 460rpx;
+  border: 1px solid #999;
+  border-radius: 15px;
+  font-size: 22rpx;
+  padding-left: 20rpx;
+}
+.like-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.like {
+  margin-right: 30rpx;
+  margin-top: 10rpx;
+}
+.posting-container {
+  bottom: 0;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* width:690rpx; */
+  background-color: #fff;
+  width: 100%;
+  z-index: 999;
+}
+.post-header {
+  width: 100%;
+  border-bottom: 1px solid #f5f5f5;
+  border-top: 1px solid #f5f5f5;
+  height: 100rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.post-header>text:first-child {
+  font-size: 28rpx;
+  color: #bbb;
+}
+.cancel {
+  color: #666;
+}
+.post-header text {
+  padding: 25rpx;
+}
+.post {
+  width: 690rpx;
+  margin: 30rpx auto;
+  height: 56rpx;
+  background-color: #f5f5f5;
+  border-radius: 15px;
+  padding-left: 25rpx;
+}
+.detail-contaner {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-bottom: 100rpx;
+  font-size: 28rpx;
+  color: #666;
+}
+.vertical {
+  display: flex;
+  flex-direction: column;
+}
+.vertical-1 {
+  align-items: flex-end;
+}
